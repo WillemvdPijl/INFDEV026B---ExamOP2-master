@@ -1,0 +1,6 @@
+C:\Users\Willem\Dev\INFDEV026B---ExamOP2-master\FirstExamNoAnswers\FirstExam\obj\Debug\FirstExam.csprojResolveAssemblyReference.cache
+C:\Users\Willem\Dev\INFDEV026B---ExamOP2-master\FirstExamNoAnswers\FirstExam\bin\Debug\FirstExam.exe.config
+C:\Users\Willem\Dev\INFDEV026B---ExamOP2-master\FirstExamNoAnswers\FirstExam\bin\Debug\FirstExam.exe
+C:\Users\Willem\Dev\INFDEV026B---ExamOP2-master\FirstExamNoAnswers\FirstExam\bin\Debug\FirstExam.pdb
+C:\Users\Willem\Dev\INFDEV026B---ExamOP2-master\FirstExamNoAnswers\FirstExam\obj\Debug\FirstExam.exe
+C:\Users\Willem\Dev\INFDEV026B---ExamOP2-master\FirstExamNoAnswers\FirstExam\obj\Debug\FirstExam.pdb

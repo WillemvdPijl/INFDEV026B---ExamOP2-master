@@ -53,17 +53,23 @@ namespace FirstExam
     public static IEnumerable<T2> Map<T1, T2>(this IEnumerable<T1> collection, Func<T1, T2> transformation)
     {
       T2[] result = new T2[collection.Count()];
-      //TODO: Complete the implementation of Map
+      //TODO1: Complete the implementation of Map
+      for (int i = 0; i <  collection.Count(); i++)
+            {
+                result[i] = transformation(collection.ElementAt(i));
+            }
       return result;
     }
 
     public static T2 Reduce<T1, T2>(this IEnumerable<T1> collection, T2 init, Func<T2, T1, T2> operation)
     {
-      T2 result = default(T2); //PLACEHOLDER: replace with your code
-      //TODO: complete with the initialization of the accumulator
+      //T2 result = default(T2); //PLACEHOLDER: replace with your code
+      //TODO2: complete with the initialization of the accumulator
+      T2 result = init;
       for (int i = 0; i < collection.Count(); i++)
       {
-        //TODO: complete the body of the for-loop of Reduce
+             //TODO3: complete the body of the for-loop of Reduce
+             result = operation(result, collection.ElementAt(i));
       }
       return result;
     }
@@ -123,15 +129,19 @@ namespace FirstExam
     static void Main(string[] args)
     {
       
-      var q1 = CourseTable.Map(c => c/*TODO: Replace with the correct lambda*/);
+      var q1 = CourseTable.Map(c => new { Name = c.Name, Duration = c.Duration }).ToList()/*TODO4: Replace with the correct lambda*/;
       var q2 = AssignmentTable.Reduce(new List<Assignment>(),
         (l,a) =>
         {
-          //TODO: complete the body of the lambda to implement the query
+            //TODO5: complete the body of the lambda to implement the query
+
+            if (a.Month >= 9)
+                l.Add(a);
+
           return l;
         }).Map(a => new { Code = a.Code, Type = a.Type });
-      var q3 = CourseTable.Join(/*TODO: Complete with the correct call to Join*/).Join
-               (/*TODO: Complete with the correct call to Join*/).Map
+      var q3 = CourseTable.Join(CourseAssignmentTable, t => t.Item1.Code == t.Item2.CourseCode/*TODO6: Complete with the correct call to Join*/).Join
+               (AssignmentTable, t => t.Item1.Item2.AssignmentCode == t.Item2.Code/*TODO7: Complete with the correct call to Join*/).Map
                (t => new { CourseCode = t.Item1.Item1.Code, AssignmentMonth = t.Item2.Month, AssignmentDay = t.Item2.Day });
     }
   }
